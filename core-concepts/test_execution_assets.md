@@ -34,6 +34,18 @@ Generate is the process of converting AI-generated test steps into executable Pl
 - Executes generated automation immediately.
 - Captures execution artifacts, including screenshots and logs.
 
+## Sandbox
+
+### What is Sandbox?
+
+The Sandbox is an isolated browser environment where LuciusAI executes your automated test cases. Every interaction performed during execution takes place inside this environment, allowing you to observe the automation in real time without affecting your local browser. The Sandbox displays each browser action as it occurs and reflects the current execution state throughout the test.
+
+### Key Concepts
+
+- Isolated browser execution environment.
+- Displays browser interactions in real time.
+- Used during both generation and execution.
+- Provides a safe environment for automated testing.
  
 
 ## Run
