@@ -14,19 +14,23 @@ This guide walks you through every authentication scenario supported by Lucius A
 
 By the end of this guide, you'll be able to access your Lucius AI workspace and begin using the platform.
 
-# Creating a New Account
+# Sign-up and Login
 
-If you're using Lucius AI for the first time, you'll need to create a new account before accessing the platform.
+If you're using Lucius AI for the first time, you'll need to **create a new account** before accessing the platform.
 
-### Steps
-
-1. Open the **Lucius AI Sign Up** page.
+1. Open the **Lucius AI Login (app.luciustest.ai/login)** page.
 2. Enter your email address.
 3. Create a secure password that meets the required password criteria.
 4. Confirm your password.
 5. Select **Create Account**.
 
 Once your information has been submitted successfully, Lucius AI creates your account and sends a verification email to the registered email address.
+
+To **Login** to an existing account:
+1. Open the **Lucius AI Login (app.luciustest.ai/login)** page.
+2. Enter your email address.
+3. Click **Sign In**.
+
 
 # Verifying Your Email Address
 
