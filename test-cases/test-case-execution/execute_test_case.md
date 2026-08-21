@@ -28,9 +28,7 @@ The **Test Steps** panel displays all the steps associated with the selected tes
 - Its current execution status
 - Controls for interacting with the individual step
 
-The steps are executed sequentially, and their status is updated as execution progresses. The panel also provides controls for managing the steps during execution, including selecting steps, creating modules, deleting selected steps, inserting modules, and adding or modifying steps.
-
-The Test Steps panel also provides the following controls:
+The steps are executed sequentially, and their status is updated as execution progresses. The panel also provides controls for managing the steps during execution, including selecting steps, creating modules, deleting selected steps, inserting modules, and adding or modifying steps. The Test Steps panel also provides the following controls:
 
 - **Create Module:** Select the required test steps and create a reusable module from them. The selected steps are grouped into the newly created module.
 - **Reset Agent Index:** Resets the current test-step index to the first step.
