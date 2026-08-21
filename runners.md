@@ -42,3 +42,131 @@ A configured runner can be selected when executing a **Test Suite**. Selecting *
   - **Custom Resolution** – Select the required screen resolution.
 
 After selecting the runner configuration and either a saved matrix or custom environment, select **Run with Runner** to initiate the suite execution.
+
+# Runner Job
+
+When a test suite is executed using a configured runner, the **Runner Job** tab provides details about the runner execution associated with that suite run. It gives an overview of the job, the runner configuration used, the execution environment, and the sessions created during the run.
+
+### Job Details
+
+The **Job Details** section provides the execution-level information for the runner job, including:
+
+- **Job ID** – Unique identifier assigned to the runner job.
+- **Provider Job ID** – Identifier of the corresponding job at the runner provider.
+- **Status** – Current status of the runner job, such as completed or failed.
+- **Provider Status** – Status reported by the configured runner provider.
+- **Triggered By** – User who initiated the suite run.
+- **Created** – Time at which the runner job was created.
+- **Started** – Time at which execution began.
+- **Finished** – Time at which execution ended.
+- **Updated** – Time at which the job information was last updated.
+
+The runner job also provides quick access to **View Report** and **CLI Logs**, allowing you to inspect the detailed execution results or access the underlying execution logs.
+
+### Runner Configuration
+
+The **Runner Config** section shows the runner configuration used for the execution. It includes details such as:
+
+- Runner name
+- Runner provider
+- Username associated with the runner
+- Config ID
+- Runner visibility
+- Masked authentication token
+
+This allows you to identify exactly which configured runner was used for the suite execution.
+
+### Config Matrix
+
+The **Config Matrix** section displays the execution environment selected for the runner job. It includes the matrix name and ID along with environment details such as:
+
+- Operating system
+- Browser and browser version
+- Screen resolution
+
+This helps identify the environment in which the test was executed.
+
+### Sessions
+
+The **Sessions** section lists the individual test sessions created as part of the runner job. Each session provides information such as:
+
+- **Name** – Name of the executed test or session.
+- **Scenario** – Scenario or test path associated with the session.
+- **Status** – Execution result, such as Passed or Failed.
+- **Duration** – Time taken by the session to complete.
+
+This provides a session-level view of the tests executed within the runner job.
+
+# Runner Job Report
+
+The **Runner Job Report** provides a detailed view of the execution performed by the configured runner. It can be accessed from the **View Report** option available on the Runner Job page and provides both an overall execution summary and task-level execution information.
+
+### Run Summary
+
+The **Report** view presents a high-level summary of the runner execution, including:
+
+- **Start** – Time when the execution started.
+- **End** – Time when the execution completed.
+- **Duration** – Total execution time.
+- **Tests** – Number of tests included in the job.
+- **Provider** – Runner provider used for the execution.
+- **Provider Job ID** – Identifier of the corresponding provider-side job.
+- **Job Label** – Label or configuration associated with the runner job.
+- **Tags** – Environment and execution tags associated with the job.
+- **Framework** – Automation framework used for the execution.
+
+A progress indicator provides a quick view of the overall execution result, including the number of tasks completed, running, or failed.
+
+The report can also include an **Extra** section containing additional execution metadata associated with the runner job.
+
+### Tasks
+
+The **Tasks** view provides a more granular breakdown of the runner execution. The left panel lists the tasks associated with the job and allows you to search through them. Each task displays its execution status, environment information, execution duration, and start time.
+
+Selecting a task displays detailed information such as:
+
+- Task ID
+- Operating system
+- Created, start, and end timestamps
+- Duration
+- Context Job ID
+- Context Task ID
+- Execution template
+- Group number
+- Iteration
+- Debug status
+
+The task execution can then be examined through three stages: **Pre Steps**, **Execution**, and **Post Steps**.
+
+### Pre Steps
+
+The **Pre Steps** tab displays activities performed before the actual test execution begins. These can include environment preparation, cache restoration, dependency setup, or other initialization activities.
+
+Each stage is listed separately with its execution status. Selecting a stage displays the corresponding logs in the log viewer.
+
+### Execution
+
+The **Execution** tab shows the stages directly associated with test execution. This can include activities such as test discovery and execution of the generated test scenario.
+
+Each execution stage displays its status, while the log viewer provides the corresponding execution output.
+
+### Post Steps
+
+The **Post Steps** tab displays activities performed after the test execution has completed. These may include cleanup or cache-related operations.
+
+The status of each post-execution stage is displayed, along with its associated logs.
+
+### Execution Logs
+
+Each stage provides a detailed log viewer where you can inspect the output generated during that stage. The log viewer supports:
+
+- **Search Logs** – Search for specific information within the logs.
+- **Copy Logs** – Copy the displayed log content.
+- **Open in New Tab** – Open the logs separately for easier inspection.
+- **Download Logs** – Download the logs for offline analysis.
+
+# CLI Logs
+
+A CLI report is generated for each runner job and contains the complete **command-line execution logs**. Click CLI Logs to open the full set of CLI logs in a new tab for detailed inspection.
+
+Together, the task details, execution stages, and logs provide a complete view of **how the runner job was executed, what happened at each stage, and where to investigate when an execution does not complete successfully**.
