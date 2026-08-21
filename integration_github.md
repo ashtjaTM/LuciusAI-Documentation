@@ -1,212 +1,187 @@
-Dashboards
+Integrations
 
-The Dashboard provides a centralized view of testing activity, execution trends, project information, user activity, and plan or usage details. It is organized into three views—Overall Dashboard, Organization Dashboard, and Project Dashboard—allowing users to monitor information at different levels of the platform.
+Integrations allow LuciusAI to connect with external development and collaboration platforms. Currently, LuciusAI supports GitHub integration, which allows test cases created within a project to be exported to a GitHub repository as code.
 
-The dashboard view can be switched using the tabs available at the top of the dashboard:
+The GitHub integration is configured at the project level and provides capabilities to connect a GitHub account, control repository access, select an export destination, and synchronize test cases with a repository.
 
-Overall Dashboard – Provides a consolidated high-level view of the available projects, test activity, users, and account-level information.
-Organization Dashboard – Provides insights and management information specific to the selected organization.
-Project Dashboard – Provides detailed testing and execution insights for the selected project.
-Overall Dashboard
+GitHub Integration
 
-The Overall Dashboard provides a high-level overview of testing activity and the projects available to the user. It brings together key metrics and recent activity into a single view.
+The GitHub integration allows users to connect their GitHub account to a LuciusAI project and export test cases directly to a GitHub repository.
 
-Total Runs
+The integration can be accessed from the project's settings under Integrations.
 
-The Total Runs chart provides a time-based view of test execution results. It plots test runs over the selected period and distinguishes between:
+Connecting a GitHub Account
 
-Passed runs
-Failed runs
+When GitHub is not connected, the Integrations page displays a Connect option along with a message indicating that a GitHub account must be connected before test cases can be exported.
 
-Hovering over the chart provides the run count for a particular date, allowing users to track execution activity and identify changes in testing trends.
+Selecting Connect initiates the GitHub authorization flow.
 
-Total Test Runs
+During the connection process:
 
-The Total Test Runs card displays the total number of test runs performed and indicates the change compared with the previous period, such as the percentage change over the last 30 days.
+LuciusAI opens the GitHub authorization flow.
+GitHub prompts the user to select the GitHub account or organization that should be connected to the project.
+The user can select an existing GitHub account installation or choose to install the Lucius GitHub Connector on a different account.
+GitHub may require the user to confirm access by authenticating their account.
+After authorization, the GitHub application is installed and associated with the selected account.
+GitHub Application Permissions
 
-Active Users
+The GitHub connector requires access to the repositories that will be used for test case synchronization.
 
-The Active Users card displays the number of users currently working on the platform. This provides a quick view of current user activity.
+The recording shows the connector requesting:
 
-Manage Projects
+Read access to metadata
+Read and write access to code
 
-The Manage Projects section provides an overview of the projects available to the user.
+Repository access can be configured in GitHub in two ways:
 
-It includes:
+All repositories – Grants the connector access to all current and future repositories owned by the resource owner, with public repositories also included as read-only.
+Only select repositories – Allows the user to explicitly select the repositories that LuciusAI can access.
 
-Total number of projects.
-Add Project option to create a new project.
-View All option to navigate to the complete project listing.
+When using the selective option, individual repositories can be added or removed from the connector's access list before saving the configuration.
 
-This provides a quick way to access and manage projects directly from the dashboard.
+This provides control over which repositories LuciusAI can use for test case exports.
 
-Test Cases and Test Suites
+Connected GitHub Account
 
-The dashboard provides summary cards showing the total number of:
+After successful authorization, the Integrations page displays the connected GitHub account and its installation status.
 
-Test Cases
-Test Suites
+The connected integration provides options to:
 
-These cards provide a quick indication of the testing assets available across the dashboard scope.
+Manage repositories on GitHub – Open GitHub's application settings to manage repository access.
+Refresh repositories – Refresh the list of repositories available to LuciusAI.
+Unlink – Disconnect the GitHub account from the project.
 
-Activity Log
+The connection is shown as Active when the integration is successfully configured.
 
-The Activity Log displays recent platform activity, providing information such as:
+Exporting Test Cases to GitHub
 
-Activity performed.
-User who performed the activity.
-Time of the activity.
+Once GitHub has been connected, test cases can be exported to a repository.
 
-Examples of activities include creating or updating roles, updating an organization, and project-related actions. This provides visibility into recent changes and activities performed within the workspace.
+The recording demonstrates the export functionality from both the project's Integrations settings and the Test Cases section.
 
-Current Plan and Credit Usage
+Export from Integrations
 
-The Current Plan section displays information about the user's current subscription plan and its associated usage.
+The project's GitHub integration page contains an Export section with the instruction to choose a repository and branch for the export.
 
-It provides a summary of:
+The export configuration includes:
 
-Total Members
-Total Projects
-Credit Usage
+Repository – Select the GitHub repository where the test cases should be exported.
+Branch – Specify the target branch. The branch defaults to main in the demonstrated flow.
+Commit Message – An optional commit message can be provided for the GitHub synchronization.
 
-Credit usage is broken down by available credit categories, such as Scenario Generation, Code Generation, Test Runs, and other applicable platform operations. The section displays the allocated credits, consumed credits, and remaining usage where applicable.
+The default commit message shown by the platform is:
 
-Organization Dashboard
+Automated test case synchronization
 
-The Organization Dashboard provides a view focused specifically on the selected organization.
+Once the repository and branch are configured, selecting Export starts the synchronization process.
 
-The organization header displays the organization name and provides organization-level actions such as:
+Export from Test Cases
 
-Edit – Edit the organization details.
-Delete – Delete the organization.
-Organization Settings – Access organization-level configuration.
+The Test Cases section also provides an Export option.
 
-The dashboard then provides organization-specific testing and activity information.
+Selecting it opens an Export to GitHub panel with the description:
 
-Total Runs
+Push your test cases to a repository
 
-The Total Runs chart displays the organization's test execution activity over time. Passed and failed executions are represented separately, allowing users to monitor execution trends within the organization.
+The panel provides the same core export configuration:
 
-Total Test Runs
+Repository
+Branch
+Commit message
 
-The Total Test Runs card displays the total number of test runs associated with the organization and provides a comparison with the previous period.
+This allows GitHub export to be initiated directly while working with test cases, without requiring the user to navigate back to the project integration settings.
 
-Active Users
+Export Destination
 
-The Active Users card displays the number of users currently working within the organization.
+The export destination is determined by the GitHub repository and branch selected during the export.
 
-Manage Projects
+For example, the recording demonstrates an export to a repository on the connected GitHub account using the main branch.
 
-The Manage Projects section provides an overview of the projects belonging to the organization.
+The exported test cases are committed to the selected repository through the Lucius GitHub connector.
 
-It displays the number of projects in the organization and provides:
+The GitHub repository shown after export contains the generated test-case files along with folders corresponding to the organization of test cases within LuciusAI.
 
-New Project – Create a new project.
-View All – View the organization's complete project list.
-Test Cases and Test Suites
+For example, the demonstrated repository contains folders such as:
 
-The organization dashboard provides summary counts for the testing assets available within the organization:
+Ikea
+Import_Data_Set_1csv
+Saucedemo
+Toyota
 
-Test Cases
-Test Suites
+It also contains a root-level test file such as Test_1.ts.
 
-These provide a quick overview of the organization's testing inventory.
+This indicates that the export maintains the test-case folder organization when creating the corresponding structure in GitHub.
 
-Project Dashboard
+The exported files are generated as TypeScript (.ts) test files, making the exported test cases available as code within the GitHub repository.
 
-The Project Dashboard provides the most detailed level of dashboard insights and focuses specifically on the selected project.
+Export Process and Status
 
-The project header displays the project name and provides project-level actions such as:
+When an export is initiated, LuciusAI provides feedback about the synchronization status.
 
-Edit – Edit project information.
-Project Settings – Access project-specific configuration.
+The export can move through states such as:
 
-The dashboard combines execution metrics, test-case analysis, run information, and recent execution details.
+Queued
+Running
+Completed
 
-Total Runs
+A notification is displayed when the export is queued, for example "GitHub export queued."
 
-The Total Runs chart displays the project's test execution activity over time, separating Passed and Failed runs. This allows users to monitor the project's execution trend and identify periods with increased failures or activity.
+While an export is in progress, the integration page displays the repository and branch being synchronized and provides an Abort option to stop the ongoing export.
 
-Total Test Runs
+Once the synchronization completes, LuciusAI displays a completion notification such as "GitHub export completed."
 
-The Total Test Runs card displays the number of test runs performed for the project and provides a comparison with the previous period.
+The GitHub repository is then updated with the exported test-case files.
 
-Active Users
+Recent Exports
 
-The Active Users card shows the number of users currently working on the project.
+The GitHub integration page also provides a Recent Exports section.
 
-Test Cases by Status
+This section maintains a history of previous GitHub export operations and displays information including:
 
-The Test Cases by Status section provides a breakdown of test cases according to their current status.
+Repository
+Branch
+Export timestamp
+Export status
 
-The dashboard displays statuses such as:
+The status indicates whether an export is currently Running or has been Completed.
 
-Active
-Draft
-Archived
-Deprecated
+This provides users with a quick way to verify previous synchronization activity and monitor an export that is currently in progress.
 
-The distribution is presented visually along with the corresponding percentage for each status, making it easier to understand the current state of the project's test-case inventory.
+GitHub Repository Synchronization
 
-Test Cases by Priority
+After a successful export, the Lucius GitHub Connector performs the repository update.
 
-The Test Cases by Priority section provides a breakdown of test cases based on their assigned priority:
+The GitHub repository shows the connector as the actor responsible for the synchronization, with commits such as Automated test case synchronization.
 
-High
-Medium
-Low
+The exported structure can contain:
 
-The dashboard displays the percentage distribution for each priority level, helping users understand how the project's test cases are prioritized.
+Test-case folders corresponding to folders created in LuciusAI.
+Individual TypeScript test files for test cases.
+Existing repository files remain alongside the exported content.
 
-Run Summary
+Repeated exports to the same repository and branch can therefore be used to synchronize the test cases with the selected GitHub destination.
 
-The Run Summary section provides a tabular view of recent test executions.
+Integration Flow at a Glance
 
-For each run, the dashboard can display:
+The complete GitHub integration workflow demonstrated in the recording can be summarized as:
 
-Test Case – The test case that was executed.
-Run ID – Unique identifier of the execution.
-Triggered By – User who initiated the run.
-Duration – Time taken by the execution.
-Status – Result of the execution, such as Passed or Failed.
+Project Settings → Integrations → GitHub → Connect → Select GitHub Account/Organization → Authorize GitHub Connector → Configure Repository Access → Return to LuciusAI → Refresh Repositories → Select Repository → Select/Enter Branch → Add Optional Commit Message → Export → Monitor Export Status → Verify Files and Commit in GitHub
 
-This provides a quick way to review recent execution results without navigating to individual test cases.
+Key capabilities covered
+Capability	Description
+GitHub Connection	Connect a GitHub account or organization to the LuciusAI project
+Repository Permissions	Grant access to all repositories or only selected repositories
+Repository Management	Manage repository access through GitHub
+Repository Refresh	Refresh the repositories available for export
+Test Case Export	Push LuciusAI test cases to GitHub
+Export Locations	Export from Project Integrations or directly from the Test Cases section
+Branch Selection	Choose the target GitHub branch
+Commit Message	Add an optional custom commit message
+Folder Structure	Exported test cases are organized into corresponding repository folders
+Code Export	Test cases are exported as TypeScript (.ts) files
+Export Status	Track queued, running, and completed exports
+Abort Export	Stop an export while it is in progress
+Recent Exports	View previous and currently running export operations
+Repository Synchronization	Commit exported test cases to the selected GitHub repository
 
-Test Cases and Test Suites
-
-The project dashboard also displays summary cards for the total number of:
-
-Test Cases
-Test Suites
-
-These provide direct visibility into the size of the project's testing assets.
-
-Last Run
-
-The Last Run section provides details about the most recent test execution.
-
-It displays information such as:
-
-Run Status
-Test Case Name
-Run At
-Duration
-Finished At
-Priority
-Triggered By
-
-This gives users a concise summary of the project's latest execution and its outcome.
-
-Detail History
-
-The Detail History option provides access to more detailed execution history for the project, allowing users to inspect previous test runs beyond the summary information displayed on the dashboard.
-
-Dashboard Navigation and Scope
-
-The three dashboard views provide progressively more focused information:
-
-Overall Dashboard → Organization Dashboard → Project Dashboard
-
-The Overall Dashboard provides the broadest overview, the Organization Dashboard focuses on a selected organization's projects and testing activity, and the Project Dashboard provides detailed insights into a specific project's test cases, priorities, execution history, and latest runs.
-
-Together, these dashboards provide a centralized monitoring layer for understanding test execution, testing assets, users, projects, activity, priorities, run history, and platform usage without requiring users to navigate through individual testing sections.
+One important scope point from the recording: the demonstrated integration is specifically for exporting/synchronizing test cases to GitHub. The video does not demonstrate importing test cases from GitHub back into LuciusAI, so that should not be documented as a supported GitHub integration capability based on this recording alone.
