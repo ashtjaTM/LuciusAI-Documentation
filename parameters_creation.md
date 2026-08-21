@@ -1,97 +1,79 @@
 # Parameters
 
-## Introduction
+The **Parameters** module in Lucius AI allows users to create and manage reusable parameter values that can be used in test cases and during test execution.
 
-Parameters allow you to create reusable key-value pairs that can be referenced across multiple test cases. Instead of hardcoding frequently used values such as usernames, passwords, URLs, email addresses, or other test data, you can define them once and reuse them throughout your project.
+Parameters are managed at the project level and can be accessed from the left navigation panel under **Test Management → Parameters**. The Parameters workspace provides the following functionality:
 
-Using parameters improves test maintainability, promotes consistency across test cases, and simplifies updates by allowing commonly used values to be managed from a single location.
+- View all available parameters.
+- Create a new parameter.
+- Edit an existing parameter and its values.
+- Delete an existing parameter.
 
-## Create a Parameter
+The main Parameters table displays the following information:
 
-Follow these steps to create a new **Parameter**:
+- **Sl. No**: Displays the serial number of the parameter.
+- **Key**: Displays the parameter name/key.
+- **Value**: Displays the parameter's configured value. When multiple values are configured, the additional values are indicated alongside the displayed value.
+- **Visibility**: Displays the visibility scope of the parameter, such as **Global**.
+- **Manage**: Provides options to edit or delete the parameter.
 
-1. Navigate to **Parameters** from the left navigation panel.
-2. Click **Create Parameter**.
-3. The **Create Parameter** panel opens.
-4. Provide a unique **Key** that will be used to identify the parameter throughout the project.
-5. Enter the corresponding **Value** that should be associated with the parameter.
-6. Review the entered information and click **Create Parameter**.
+## Creating a Parameter
 
-Lucius AI creates the parameter and adds it to the **Parameters** list, making it immediately available for use across your test cases.
+To create a parameter, click **Create Parameter** from the Parameters workspace. Lucius AI opens the **Create New Parameter** panel. The panel contains:
 
-## Parameters List
+- **Key** – Defines the name of the parameter.
+- **Values** – Defines the values that can be used for the parameter.
+- **Add Value** – Adds another value row to the parameter.
+- **Default Value** – Allows one of the configured values to be designated as the default value.
+- **Delete** – Removes an individual value from the parameter.
 
-The **Parameters** page displays all parameters that have been created within the selected project.
+A parameter can contain multiple values, with one value designated as the **Default Value**. After configuring the key and values, click **Create Parameter** to save the parameter. The newly created parameter is then displayed in the Parameters table.
 
-Each parameter is displayed as a separate row containing the following information:
+## Editing Parameters
 
-### Key
+Existing parameters can be modified using the **Edit** action in the **Manage** column. The **Edit Parameter** panel allows users to:
 
-Displays the unique identifier of the parameter that can be referenced while creating or editing test cases.
+- View the existing parameter key.
+- Add additional values.
+- Update the configured values.
+- Change which value is marked as the default value.
+- Delete individual values.
 
-### Value
+After making the required changes, click **Save changes** to update the parameter.
 
-Displays the value associated with the parameter.
+## Deleting Parameters
 
-### Visibility
+A parameter can be permanently removed using the **Delete** action in the **Manage** column. Lucius AI displays a confirmation dialog before deletion. Selecting **Delete** permanently removes the parameter, while **Cancel** closes the confirmation dialog without deleting it.
 
-Indicates the visibility of the parameter within the project.
+## Using Parameters in Test Cases
 
-### Manage
+Parameters can be used in test cases in two ways:
 
-Provides actions to manage the selected parameter.
+- **Global Parameters:** Parameters created from the **Parameters** module are globally available within the project. These parameters can be referenced directly in test steps by entering the parameter **key within double curly braces**. For example, if the parameter key is `test`, it can be referenced in a test step as `{{test}}`. During execution, the referenced parameter is resolved using its configured value.
+- **Suggested Parameters:** Lucius AI can suggest parameters based on values identified during or after test case creation. These suggestions are generated from parameterizable values found within the test case and can be saved and configured as parameters for subsequent use.
 
-Available actions include:
+### Running a Test Case with Parameters
 
-- **Edit** – Modify the parameter details.
-- **Delete** – Permanently remove the parameter from the project after confirmation.
+A test case can be executed with parameters using the **Run with Parameters** option from the test case's **Run** menu. When **Run with Parameters** is selected, Lucius AI opens the **Run with parameters** screen. The screen displays the parameters associated with the test case and provides a run matrix for configuring their values before execution.
 
-## Edit a Parameter
+- If no parameters are associated with the test case, the screen displays **No parameters are available for this test case**.
+- When parameters are available, each parameter is displayed with its **Scope, Values, Default** value, and the value configured for the current run.
+- The **run value** is initially populated with the parameter's default value. The value can be modified specifically for the current execution without changing the configured default value.
+- After modifying a value, click **Save changes** to save the run configuration.
+- Click **Run with parameters** to start the parameterized test-case execution.
 
-To modify an existing parameter:
+The run matrix also indicates the number of runs that will be created based on the configured parameter values.
 
-1. Click the **Edit** action corresponding to the required parameter.
-2. The **Edit Parameter** panel opens with the existing parameter information pre-populated.
-3. Update the required fields.
-4. Click **Save Changes**.
+### Running a Test Suite with Parameters
 
-The updated parameter is immediately available wherever it is referenced throughout the project.
+A test suite can be executed with parameters using the **Run with Parameters** option from the suite's **Run** menu. When selected, Lucius AI opens the **Run suite with parameters** screen. Since a suite can contain multiple test cases, the screen displays the test cases included in the suite along with the parameters associated with each applicable test case.
 
-## Delete a Parameter
+For each test case, the available parameters and their configured values are displayed. The parameter values for the current run can be modified in the same way as for an individual test case:
 
-Parameters that are no longer required can be removed from the project.
+- The **default value** is displayed for each parameter.
+- The **run value** is initially populated with the default value.
+- The **run value** can be changed specifically for the current suite execution.
+- **Save changes** saves the updated run configuration.
+- **Run with parameters** starts the suite execution using the configured parameter values.
 
-To delete an existing parameter:
-
-1. Click the **Delete** action corresponding to the parameter you want to remove.
-2. Lucius AI displays a confirmation dialog to prevent accidental deletion.
-3. Review the confirmation message.
-4. Click **Delete** to permanently remove the parameter.
-
-Alternatively, click **Cancel** to return without deleting the parameter.
-
-Once deleted, the parameter is removed from the project and is no longer available for future test executions.
-
-## Using Parameters
-
-Once a parameter has been created, it can be referenced while creating or editing test cases.
-
-During test execution, Lucius AI automatically resolves the parameter value and substitutes it wherever the parameter is used.
-
-To reference a parameter within a test case or an individual test step, enter the parameter **Key** enclosed within double curly braces.
-
-### Syntax
-
-```text
-{{Parameter_Key}}
-```
-
-### Example
-
-If a parameter has been created with the key **Username**, it can be referenced within a test step as:
-
-```text
-{{Username}}
-```
-
-During test execution, Lucius AI replaces the referenced parameter with its corresponding value, allowing the same test case to be reused with centrally managed test data.
+The suite screen also displays the resulting **suite matrix**, including the number of jobs that will be queued for execution. After the suite is run, the parameterized execution is recorded as a suite run and can be reviewed from the suite's **Runs** section.
