@@ -65,7 +65,7 @@ The **Free** plan is designed for getting started with Lucius AI and is availabl
 
 Select **Start testing free** to continue subscribing with the Free plan.
 
-#### Enterprise
+### Enterprise
 
 The **Enterprise** plan is designed for teams and organizations and includes everything available in the Free plan, along with additional capabilities such as:
 
