@@ -6,8 +6,7 @@ The **Execution Details** page provides a complete view of a specific test run, 
 
 At the top of the page, the header displays the basic information about the selected execution:
 
-- **Back** — Returns to the previous page.
-- **Run Number** — Displays the identifier of the selected execution, such as **Run #01**.
+- **Run Number** — Displays the identifier of the selected execution, for example **Run #01**.
 - **Overall Status** — Indicates whether the execution **Succeeded** or **Failed**.
 - **Export HTML** — Allows the complete execution report to be exported as an HTML file.
 
@@ -22,23 +21,15 @@ The **Run Summary** section provides a high-level overview of the selected execu
 - **Module** — Displays the number of modules associated with the execution.
 - **Source** — Identifies the source or user associated with the execution.
 
-A status bar provides a visual breakdown of the execution, showing the number of steps that **Succeeded**, **Failed**, or are **Pending**. The same counts are displayed below the bar for quick reference.
-
-This allows users to quickly understand the overall outcome of the run without reviewing every individual step.
+A status bar provides a visual breakdown of the execution, showing the number of steps that **Succeeded**, **Failed**, or are **Pending**. The same counts are displayed below the bar for quick reference. This allows users to quickly understand the overall outcome of the run without reviewing every individual step.
 
 ### 3. Playwright Trace Report
 
-The **Playwright Trace Report** section provides access to the detailed execution trace generated for the run.
-
-When the trace is available, its status is displayed as **Ready**. Expanding the section allows users to inspect the detailed execution trace, including the sequence of browser interactions and execution-related information captured during the run.
-
-The trace can be particularly useful when investigating how the browser behaved during a specific step or identifying where an execution encountered an issue.
+The **Playwright Trace Report** section provides access to the detailed execution trace generated for the run. When the trace is available, its status is displayed as **Ready**. Expanding the section allows users to inspect the detailed execution trace, including the sequence of browser interactions and execution-related information captured during the run. The trace can be particularly useful when investigating how the browser behaved during a specific step or identifying where an execution encountered an issue.
 
 ### 4. Execution Video
 
-The **Execution Video** section provides access to the recorded execution of the test.
-
-Users can expand this section to view the recorded video of the test execution. The video provides a visual representation of how the test was executed in the browser and can be used to review the overall execution flow or investigate unexpected behaviour.
+The **Execution Video** section provides access to the recorded execution of the test. Users can expand this section to view the recorded video of the test execution. The video provides a visual representation of how the test was executed in the browser and can be used to review the overall execution flow or investigate unexpected behaviour.
 
 ### 5. Test Steps
 
@@ -48,11 +39,7 @@ The **Test Steps** section lists all the steps included in the selected executio
 - The **test-step description**.
 - The execution **status**, such as **Success**, **Failed**, or **Pending**.
 
-The status of each step is displayed on the right side, allowing users to quickly identify successful and failed portions of the execution.
-
-#### Viewing Step Details
-
-Individual test steps can be expanded to view additional execution information. The expanded view provides:
+The status of each step is displayed on the right side, allowing users to quickly identify successful and failed portions of the execution. Individual test steps can be expanded to view additional execution information. The expanded view provides:
 
 - **Status** — The result of that particular step.
 - **Started At** — The time at which the step started, when available.
@@ -63,9 +50,7 @@ The expanded step also provides the following tabs:
 
 #### Screenshots
 
-The **Screenshots** tab displays the browser state associated with the step.
-
-Where screenshots are available, users can view:
+The **Screenshots** tab displays the browser state associated with the step. Where screenshots are available, users can view:
 
 - **Before Execution** — The browser state before the step was executed.
 - **After Execution** — The browser state after the step was executed.
@@ -74,15 +59,11 @@ For failed steps, these screenshots can help users understand the browser state 
 
 #### Logs & Errors
 
-The **Logs & Errors** tab provides execution logs associated with the selected step.
-
-If logs or errors were generated, they can be reviewed here to help investigate execution behaviour and failures. When no logs are available, the section displays an appropriate empty state indicating that there are no logs for the step.
+The **Logs & Errors** tab provides execution logs associated with the selected step. If logs or errors were generated, they can be reviewed here to help investigate execution behaviour and failures. When no logs are available, the section displays an appropriate empty state indicating that there are no logs for the step.
 
 #### Code & Data
 
-The **Code & Data** tab displays the code generated for the selected step.
-
-The section includes:
+The **Code & Data** tab displays the code generated for the selected step. The section includes:
 
 - **Generated Code** — Shows the automation code generated for the step.
 - **Copy** — Allows the generated code to be copied.
@@ -102,11 +83,7 @@ When a step fails, subsequent steps may remain in a **Pending** state, allowing 
 
 ### 7. Export HTML
 
-The **Export HTML** button in the top-right corner allows users to generate and download a complete HTML report for the selected execution.
-
-When **Export HTML** is selected, the execution report is generated and downloaded as an `.html` file. The browser's download dialog allows the user to choose the location where the report should be saved. Once the download is complete, a confirmation such as **Report exported** is displayed.
-
-The downloaded HTML file can then be opened directly in a browser to view the execution report independently of the platform.
+The **Export HTML** button in the top-right corner allows users to generate and download a complete HTML report for the selected execution. When **Export HTML** is selected, the execution report is generated and downloaded as an `.html` file. Once the download is complete, a confirmation such as **Report exported** is displayed. The downloaded HTML file can then be accessed directly in a browser to view the execution report independently of the platform.
 
 ### 8. Execution Report
 
@@ -127,5 +104,3 @@ The exported HTML report provides a consolidated record of the selected test exe
 - **Generated automation code and healed code**, where available
 
 The report therefore serves as a standalone record of the execution, allowing users to review what was executed, how each step performed, where a failure occurred, and the supporting execution evidence without having to return to the platform.
-
-**Note:** The HTML report is generated for the specific execution run selected by the user. It can be saved locally and opened in a browser for later review or sharing.
