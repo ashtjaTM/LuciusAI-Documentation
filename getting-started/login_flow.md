@@ -39,7 +39,39 @@ To protect your account and confirm ownership of your email address, Lucius AI r
 3. Select **Verify Email**.
 4. Wait while your account is activated.
 
-After successful verification, Lucius AI automatically continues with your onboarding journey.
+After successful verification, Lucius AI automatically continues with your onboarding journey. You can proceed ahead with Lucius AI in **one of two ways**:
+
+1. **Subscribe to a plan** and set up your own organization.
+2. **Join an existing organization** if you have been invited to one.
+
+# Selecting a Subscription Plan
+
+If you choose to set up your own organization, Lucius AI displays the available subscription plans on the **Select a plan to continue** screen. Choose the plan that best matches your requirements to proceed with onboarding.
+
+### Available Plans
+
+### Free
+
+The **Free** plan is designed for getting started with Lucius AI and is available for a trial period of **15 days**. It includes:
+
+- **Auto + Manual** testing modes
+- **GitHub** integration
+- **Runners**
+- **Bulk Import** of test cases
+
+Select **Start testing free** to continue subscribing with the Free plan.
+
+#### Enterprise
+
+The **Enterprise** plan is designed for teams and organizations and includes everything available in the Free plan, along with additional capabilities such as:
+
+- Custom usage limits
+- Teams and multi-organization capabilities
+- SSO and advanced security features
+- Tunnel and Browser Profiles capabilities
+- Dedicated customer support
+
+To proceed with Enterprise, select **Talk to us** to contact the Lucius AI team.
 
 # Joining an Existing Workspace
 
