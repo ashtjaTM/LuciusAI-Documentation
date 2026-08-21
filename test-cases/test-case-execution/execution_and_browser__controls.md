@@ -1,4 +1,3 @@
-
 ## Execution Controls
 
 The execution window provides the primary actions for generating, running, saving, and managing a test case. These actions operate on the test steps displayed in the **Test Steps** panel and the Playwright code generated for those steps.
@@ -102,3 +101,21 @@ The **Run History** button available in the test case execution window provides 
 - **View All** - The **View All** option at the bottom of the Recent runs panel navigates the user to the **History** section of the current test case in the **Test Case Details** view. This provides access to the complete historical record of executions rather than only the recent runs shown in the execution window.
 
 Selecting an individual run from the available **Recent Run** execution records navigates the user to the **Execution Details** view for that specific run. This allows the user to inspect the execution result and the details associated with that particular test run.
+
+## Live Browser Execution
+
+The **Live VNC Browser** window provides a real-time view of the browser environment in which the test case is being generated or executed. It allows you to observe the agent's actions as they happen and provides controls for configuring the browser environment, interacting with the browser, and recording manual interactions.
+
+### Browser Controls
+
+The browser toolbar provides controls for managing and interacting with the live browser environment during test execution.
+
+- **Connection Status** — Displays the current connection state of the live browser/VNC environment. The browser interaction area is available when the execution environment is connected.
+- **View Only** — Indicates that the browser is displayed in view-only mode by default. User interaction with the browser is permitted only when using Record Mode, where the user can interact with and record browser actions.
+- **Network Tunnel** — Allows the user to activate or deactivate the configured network tunnel for the browser environment. The tunnel can be enabled when the test case needs to access a private or local application/environment and disabled when it is no longer required.
+- **Browser Profile** — Allows the user to activate or deactivate the selected browser profile. A browser profile can provide the saved session state required for the test execution.
+- **Browser/Viewport Resolution** — Displays the current browser resolution, such as **1920×1080**, used by the live browser environment.
+- **Full-Screen View** — Allows the browser execution area to be expanded for a larger view of the live browser.
+- **Record** — Allows the user to manually interact with the browser session. Select **Record** to start recording, then perform the required actions and interactions directly within the VNC browser. All interactions performed during the recording are **captured and converted into corresponding test steps with associated Playwright code**. When the recording is stopped, the generated test steps are added to the Test Steps list after the existing steps.
+  
+The browser controls therefore allow the execution environment to be observed and configured while the test case is being generated or executed, without leaving the execution window.
